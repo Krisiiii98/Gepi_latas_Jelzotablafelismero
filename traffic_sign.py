@@ -1,9 +1,7 @@
 import numpy as np 
 import pandas as pd 
 import matplotlib.pyplot as plt
-import cv2
 import tensorflow as tf
-from PIL import Image
 import os
 from sklearn.model_selection import train_test_split
 from keras.utils import to_categorical
@@ -56,9 +54,9 @@ model.add(Dense(43, activation='softmax'))
 #Modell lefordítása
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-epochs = 3
+epochs = 1
 history = model.fit(X_train, y_train, batch_size=32, epochs=epochs, validation_data=(X_test, y_test))
-model.save("modell.m")
+model.save('modell_1.h5')
 
 #Pontossági grafikon kirajzolása 
 plt.figure(0)
